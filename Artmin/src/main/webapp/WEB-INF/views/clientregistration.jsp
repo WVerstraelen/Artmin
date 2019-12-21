@@ -31,6 +31,7 @@
     <form:form method="POST" modelAttribute="client">
         <form:input type="hidden" path="id" id="id"/>
         <table>
+            
             <!-- Client Name -->
             <tr>
                 <td><label for="name">Client name: </label> </td>
@@ -89,9 +90,9 @@
             <tr>
                 <td><label for="ack">ack: </label> </td>
                 <td><form:input path="ack" id="ack"/></td>
-            </tr>
+            </tr>     
             
-            
+            <!--VOEG HIER NOG DROPDOWN TOE MET ALLE ARTIESTEN, SELECTEER & NEEM artistID OVER -->
          
             <tr>
             <tr>
@@ -115,7 +116,7 @@
     </form:form>
     <br/>
     <br/>
-    Go back to <a href="<c:url value='/artist/list' />">List of All Artists </a>
+    Go back to <a href="<c:url value='/client/list' />">List of All Clients </a>
 </body>
 </html>
  

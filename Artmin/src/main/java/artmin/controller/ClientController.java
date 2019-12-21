@@ -38,10 +38,9 @@ public class ClientController {
         //First check if user already excists
         List<Client> lstClients = clientService.findAllClients();
         
-        for( Client clients : lstClients){
-            String clientOutOfList = clients.getName();
-            String clientNewinList = clients.getName();
-             //&& artists.getDescription() == artist.getDescription() 
+        for( Client inClients : lstClients){
+            String clientOutOfList = inClients.getName();
+            String clientNewinList = client.getName();         
             if (clientOutOfList.equals(clientNewinList)){
                 model.addAttribute("message", "Clientalready excists");
                 return "clientregistration";
