@@ -28,10 +28,10 @@ public class Company {
     private Long id;
 
     @Column(name = "userID", nullable=false)
-    private Long userID;
+    private Long userID = (long)2; //Tijdelijk om te testen
     
-    @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    private User user;
     
     @NotEmpty
     @Column(name = "name", nullable = false)
@@ -102,13 +102,13 @@ public class Company {
         this.userID = userID;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 
     public String getName() {
         return name;

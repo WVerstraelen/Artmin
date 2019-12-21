@@ -42,8 +42,8 @@ public class ArtistController {
         //First check if user already excists
         List<Artist> lstArtists = artistService.findAllArtists();
         
-        for( Artist artists : lstArtists){
-            String artistOutOfList = artists.getName();
+        for( Artist inArtists : lstArtists){
+            String artistOutOfList = inArtists.getName();
             String artistNewinList = artist.getName();
              //&& artists.getDescription() == artist.getDescription() 
             if (artistOutOfList.equals(artistNewinList)){
@@ -57,7 +57,7 @@ public class ArtistController {
         
         //Redirect user to success page
         model.addAttribute("success", "Artist " + artist.getName() + " registered successfully");
-        return "luckyartist"; //view r-team
+        return "artistsuccess"; //view r-team
     }
     
     @RequestMapping(value = {"/edit-{id}-artist"}, method = RequestMethod.GET)
@@ -74,21 +74,21 @@ public class ArtistController {
         artistService.updateArtist(artist);
         
         model.addAttribute("success", "Artist " + artist.getName() + " registered successfully");
-        return "luckyartist";
+        return "artistsuccess";
     }
     
     @RequestMapping(value = {"/delete-{id}-artist"}, method=RequestMethod.GET)
     public String deleteArtist(@PathVariable int id, ModelMap model){
         artistService.deleteArtistById(id);
         model.addAttribute("success", "Artist verwijderd");
-        return "luckyartist";
+        return "artistsuccess";
     }
     
     @RequestMapping(value = {"", "/list"}, method = RequestMethod.GET)
     public String listArtist(ModelMap model) {
         List<Artist> lstArtists = artistService.findAllArtists(); // ophalen gegevens uit database
         model.addAttribute("artists", lstArtists); //Attribute aan "pagina" model toevoegen naam: users, data= List<Users> met naam lstUsers
-        return "allartists"; // JSP Pagina pointer
+        return "artistlist"; // JSP Pagina pointer
     }
 
 }
