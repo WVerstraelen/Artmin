@@ -27,7 +27,7 @@ public class CompanyDao extends AbstractDao<Long, Company>{
     }
 
     public void deleteCompanyById(Long id) {
-        Query query = getSession().createSQLQuery("delete from company where id = :id");
+        Query query = getSession().createSQLQuery("delete from Company where id = :id");
         query.setLong("id", id);
         query.executeUpdate();
     }
